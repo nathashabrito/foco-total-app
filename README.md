@@ -59,7 +59,8 @@ foco-total-app/
 │   ├── types/        # Definições TypeScript
 │   └── utils/        # Funções utilitárias
 │
-├── .env.local        # Chaves de API (NÃO ENVIAR AO GIT)
+├── .env              # Chaves de API (NÃO ENVIAR AO GIT)
+├── .env.example      # Molde das chaves (ENVIAR AO GIT)
 ├── next.config.js
 └── package.json
 ```
@@ -83,17 +84,12 @@ npm install
 
 ### 3. Configure as Variáveis de Ambiente:
 
-Crie um arquivo `.env.local` na raiz do projeto e adicione as seguintes variáveis (baseado no seu Supabase e Google AI Studio):
+Crie um arquivo `.env` na raiz do projeto (você pode copiar o .env.example). Preencha com suas chaves:
 
 ```
-# Pegar no Supabase (Project Settings > Database > Connection string > URI)
-DATABASE_URL="postgresql://postgres:SUA-SENHA@db.xxxxxxxx.supabase.co:5432/postgres"
+DATABASE_URL="postgresql://postgres.kljknihkmytvlgoxoygt:[SENHA_DO_BANCO]@aws-1-us-east-1.pooler.supabase.com:6543/postgres?pgbouncer=true"
 
-# Pegar no Google AI Studio (ou Google Cloud)
-GEMINI_API_KEY="SUA-CHAVE-DO-GEMINI"
-
-# (Opcional, mas recomendado para o JWT de login)
-JWT_SECRET="GERAR-UMA-SENHA-LONGA-E-SEGURA-AQUI"
+DIRECT_URL="postgresql://postgres.kljknihkmytvlgoxoygt:[SENHA_DO_BANCO]@aws-1-us-east-1.pooler.supabase.com:5432/postgres"
 ```
 
 ### 4. Sincronize o Banco de Dados:
